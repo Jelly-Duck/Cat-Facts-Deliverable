@@ -7,6 +7,10 @@
   </head>
   <body>
     <h1><%= catFact.fact %></h1>
+    <h2>More Facts Below!</h2>
+    <% catFactsArray.forEach(fact => { %>
+    <p><%= fact.fact %></p>
+    <% }) %>
 
     <a href="/cats/fact">Get another Cat Fact mfer!</a>
   </body>

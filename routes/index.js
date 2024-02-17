@@ -9,8 +9,9 @@ router.get("/", function (req, res, next) {
 
 router.get("/cats/fact", async (req, res) => {
   try {
-    const catFact = await catAPI.fetchCatFacts();
-    res.render("cat/fact", { catFact });
+    const catFact = await catAPI.fetchCatFact();
+    const catFactsArray = await catAPI.fetchCatFacts();
+    res.render("cat/fact", { catFact, catFactsArray });
   } catch (err) {
     console.error("Error: ", err);
   }
